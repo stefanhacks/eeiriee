@@ -12,7 +12,7 @@ document.body.appendChild(app.canvas);
 
 const square = new Graphics()
   .rect(0, 0, 100, 100)
-  .fill(0xff0000);
+  .fill(0x0000ff);
 
 app.stage.addChild(square);
 
