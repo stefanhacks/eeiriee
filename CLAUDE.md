@@ -64,8 +64,9 @@ If `node_modules` is missing, install with `npm ci`. Run `typecheck`, `lint`, an
 
 ## Commit messages
 
-- About 60 characters, imperative mood.
+- About 60 characters, lowercase, in the form `<prefix>: <message>`. Example: `wip: adding files to repository`.
 - Prefix every commit with one of these contexts:
   - `wip:` commits while the PR is a draft.
+  - `add:` commits after the PR leaves draft that fit none of the prefixes below.
   - `fix:` commits focused only on hotfixes and tests.
   - `pcr:` commits added after a review (post code review).
