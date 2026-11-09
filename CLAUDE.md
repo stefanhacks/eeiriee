@@ -48,15 +48,17 @@ If `node_modules` is missing, install with `npm ci`. Run `typecheck`, `lint`, an
 - Branch preview: `https://<branch>--eeiriee.netlify.app`
 - PR preview: `https://deploy-preview-<pr-number>--eeiriee.netlify.app`
 - Production (builds from `main`): `https://eeiriee.netlify.app`
-- Start every answer with the branch preview link of the current branch (production if there is no working branch), then a horizontal rule. The task name is the branch name without `cl-`, in title case. Nothing else on that line: no notes on build status.
+- Start every answer with a header: the task name and the branch preview link of the current branch, then the GitHub PR link, then a horizontal rule. The task name is the branch name without `cl-`, in title case. Omit the PR line if no PR is open. With no working branch, use the production link. Nothing else in the header: no notes on build status.
 
   ```md
-  Link for Auto Delete Branches: https://cl-auto-delete-branches--eeiriee.netlify.app
+  Auto Delete Branches: https://cl-auto-delete-branches--eeiriee.netlify.app
+
+  PR: https://github.com/stefanhacks/eeiriee/pull/3
 
   ---
   ```
 
-  Keep the blank line before `---`; without it Markdown turns the link line into a heading.
+  Keep the blank lines: without them Markdown merges the two link lines into one, and turns the line above `---` into a heading.
 - If the user pastes a failed build log, find the cause first, then fix it.
 
 ## Working rules
