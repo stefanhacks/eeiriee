@@ -10,14 +10,14 @@ await app.init({
 
 document.body.appendChild(app.canvas);
 
-const square = new Graphics()
-  .rect(0, 0, 100, 100)
-  .fill(0x0000ff);
+const circle = new Graphics()
+  .circle(50, 50, 50)
+  .fill(0x00ff00);
 
-app.stage.addChild(square);
+app.stage.addChild(circle);
 
 const recenter = () => {
-  square.position.set(
+  circle.position.set(
     app.screen.width / 2 - 50,
     app.screen.height / 2 - 50,
   );
