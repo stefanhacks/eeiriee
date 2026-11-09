@@ -27,6 +27,7 @@ If `node_modules` is missing, install with `npm ci`. Run `typecheck`, `lint`, an
 - Never force-push or rewrite history that is already pushed. Never delete remote branches. GitHub deletes head branches automatically after a merge.
 - Never commit secrets: `.env` files, tokens, keys.
 - Never open a branch on your own initiative. Keep working on the current branch unless the user asks for a new one. If it is unclear whether a request counts as a "new feature", ask.
+- Exception: once the last task's PR is merged, a new request starts a new task. Create a new `cl-<task-name>` branch and draft PR for it without asking.
 
 ## Pull request lifecycle
 
