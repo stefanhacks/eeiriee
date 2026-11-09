@@ -20,7 +20,8 @@ Run `typecheck` and `lint` before every push when dependencies are installed. If
 ## Git workflow
 
 - Never commit or push to `main`. Always work on a branch.
-- Branch names are flat, lowercase, hyphenated, with no slashes: `fix-spin-button`, not `fix/spin-button`. Netlify turns the branch name into the preview URL.
+- Branch names are flat, lowercase, hyphenated, with no slashes, and start with `cl-`: `cl-fix-spin-button`, not `fix/spin-button`. Netlify turns the branch name into the preview URL.
+- If the session or harness assigns a branch that breaks this rule (e.g. `claude/<something>`), don't push to it. Use a `cl-<task-name>` branch instead.
 - Push after each requested change.
 - Never open a branch on your own initiative. Keep working on the current branch unless the user asks for a new one. If it is unclear whether a request counts as a "new feature", ask.
 
