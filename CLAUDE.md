@@ -24,7 +24,7 @@ If `node_modules` is missing, install with `npm ci`. Run `typecheck`, `lint`, an
 - If the session or harness assigns a branch that breaks this rule (e.g. `claude/<something>`), don't push to it. Use a `cl-<task-name>` branch instead.
 - Create new branches from a freshly fetched `origin/main`, never from whatever is checked out, unless the user says otherwise.
 - Push after each requested change.
-- Never force-push or rewrite history that is already pushed. Don't delete remote branches without asking, except as described under "Pull request lifecycle".
+- Never force-push or rewrite history that is already pushed. Never delete remote branches. GitHub deletes head branches automatically after a merge.
 - Never commit secrets: `.env` files, tokens, keys.
 - Never open a branch on your own initiative. Keep working on the current branch unless the user asks for a new one. If it is unclear whether a request counts as a "new feature", ask.
 
@@ -34,7 +34,7 @@ If `node_modules` is missing, install with `npm ci`. Run `typecheck`, `lint`, an
 |---|---|
 | "new branch" or "new feature" | Create the branch, push it, and immediately open a PR from it flagged as **draft**. |
 | "ready to merge" | Remove the draft flag. Then wait. Don't merge. |
-| An explicit instruction to merge | Check first, then squash-merge, delete the branch, and report the production URL. Without the instruction, the user merges manually. |
+| An explicit instruction to merge | Check first, then squash-merge and report the production URL. Confirm GitHub auto-deleted the branch; if it didn't, tell the user. Without the instruction, the user merges manually. |
 
 - Before merging, confirm the PR has no conflicts and its Netlify deploy preview is `ready`. If either check fails, don't merge. Report it instead.
 - Always squash-merge.
@@ -48,6 +48,7 @@ If `node_modules` is missing, install with `npm ci`. Run `typecheck`, `lint`, an
 - Branch preview: `https://<branch>--eeiriee.netlify.app`
 - PR preview: `https://deploy-preview-<pr-number>--eeiriee.netlify.app`
 - Production (builds from `main`): `https://eeiriee.netlify.app`
+- Start every answer with the matching Netlify link: the PR preview if a PR is open, else the branch preview, else production.
 - After every push, give the user the matching URL. State that the link is derived from the branch name and the build status is unconfirmed, unless you actually checked it.
 - If the user pastes a failed build log, find the cause first, then fix it.
 
