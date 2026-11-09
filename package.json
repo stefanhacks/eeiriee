@@ -1,17 +1,21 @@
 {
-  "name": "boiler",
+  "name": "eeiriee",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "type": "module",
+  "description": "Browser game client built with Vite, TypeScript and Pixi.js.",
+  "license": "Unlicense",
+  "engines": {
+    "node": ">=22.13"
+  },
   "scripts": {
     "dev": "vite",
     "typecheck": "tsc",
     "lint": "eslint .",
-    "build": "vite build"
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "npm run typecheck && npm run lint && npm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "pixi.js": "^8.20.1"
   },
