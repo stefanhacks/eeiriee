@@ -8,8 +8,10 @@ Browser game client. Vite + TypeScript + Pixi.js (`pixi.js` is the only runtime 
 - `npm run typecheck`: `tsc`
 - `npm run lint`: eslint
 - `npm run build`: Vite build into `dist`
+- `npm run preview`: serve the `dist` build locally
+- `npm run check`: `typecheck`, `lint`, and `build` in sequence
 
-If `node_modules` is missing, install with `npm ci`. Run `typecheck`, `lint`, and `build` before every push (`build` is `vite build`, which doesn't typecheck, and it's what Netlify runs). If they can't run (no network for installs), say so in the report instead of skipping silently.
+If `node_modules` is missing, install with `npm ci`. Run `npm run check` (`typecheck`, `lint`, and `build`) before every push (`build` is `vite build`, which doesn't typecheck, and it's what Netlify runs). If they can't run (no network for installs), say so in the report instead of skipping silently.
 
 ## Ask, don't assume
 
